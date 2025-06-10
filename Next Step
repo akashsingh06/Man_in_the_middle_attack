@@ -1,0 +1,12 @@
+Next Steps to Expand
+Add SSL/TLS interception capabilities
+
+Implement DNS spoofing
+
+Create a web interface for the tool
+
+Add logging to file
+
+Implement packet modification
+
+Add support for more protocols
