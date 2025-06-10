@@ -1,0 +1,6 @@
+First, create the basic structure:
+mkdir mitm-framework
+cd mitm-framework
+git init
+touch README.md LICENSE requirements.txt
+mkdir src tests docs
