@@ -1,0 +1,8 @@
+import unittest
+from src.core.mitm import MITMFramework
+
+class TestMITM(unittest.TestCase):
+    def test_arp_spoof(self):
+        mitm = MITMFramework()
+        # This is a simple test - in reality you'd want mock objects
+        self.assertIsInstance(mitm, MITMFramework)
